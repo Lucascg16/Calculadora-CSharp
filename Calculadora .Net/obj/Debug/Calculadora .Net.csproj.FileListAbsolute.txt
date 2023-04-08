@@ -1,0 +1,11 @@
+C:\Users\lucas\Documents\Calculadora .Net\Calculadora .Net\obj\Debug\Calculadora .Net.csproj.AssemblyReference.cache
+C:\Users\lucas\Documents\Calculadora .Net\Calculadora .Net\obj\Debug\Calculadora .Net.csproj.SuggestedBindingRedirects.cache
+C:\Users\lucas\Documents\Calculadora .Net\Calculadora .Net\obj\Debug\Calculadora.Net.Properties.Resources.resources
+C:\Users\lucas\Documents\Calculadora .Net\Calculadora .Net\obj\Debug\Calculadora .Net.csproj.GenerateResource.cache
+C:\Users\lucas\Documents\Calculadora .Net\Calculadora .Net\obj\Debug\Calculadora .Net.csproj.CoreCompileInputs.cache
+C:\Users\lucas\Documents\Calculadora .Net\Calculadora .Net\bin\Debug\Calculadora.Net.exe.config
+C:\Users\lucas\Documents\Calculadora .Net\Calculadora .Net\bin\Debug\Calculadora.Net.exe
+C:\Users\lucas\Documents\Calculadora .Net\Calculadora .Net\bin\Debug\Calculadora.Net.pdb
+C:\Users\lucas\Documents\Calculadora .Net\Calculadora .Net\obj\Debug\Calculadora.Net.exe
+C:\Users\lucas\Documents\Calculadora .Net\Calculadora .Net\obj\Debug\Calculadora.Net.pdb
+C:\Users\lucas\Documents\Calculadora .Net\Calculadora .Net\obj\Debug\Calculadora.Net.Calculadora.resources
