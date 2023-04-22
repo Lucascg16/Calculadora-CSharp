@@ -7,7 +7,7 @@ namespace Calculadora.Net
     public partial class Calculadora : Form
     {
         double Num1 = 0, Num2 = 0;
-        string OperacaoStatus = "";
+        string OperacaoStatus = "", OperacaoControle = "";
         public Calculadora()
         {
             InitializeComponent();
@@ -99,9 +99,19 @@ namespace Calculadora.Net
                     Visor.Text = Convert.ToString(Calculos.Divisao(Num1, Num2));
                     break;
                 case "Porcento":
-                    if (Visor.Text != "")
-                        Num2 = double.Parse(Visor.Text, CultureInfo.InvariantCulture);
-                    Visor.Text = Convert.ToString(Calculos.Porcentagem(Num1, Num2));
+                    double Resultado = 0;
+                    var porcento = Calculos.Porcentagem(Num2);
+
+                    if (OperacaoControle == "+")
+                    {
+                        Resultado = Num1 / porcento;
+                        Visor.Text = Convert.ToString(Num1 + Resultado);
+                    }else if (OperacaoControle == "-")
+                    {
+                        Resultado = Num1 * porcento;
+                        Visor.Text = Convert.ToString(Num1 - Resultado);
+                    }
+
                     break;
                 case "Elevado":
                     Visor.Text = Convert.ToString(Calculos.Quadrado(Num1));
@@ -119,6 +129,8 @@ namespace Calculadora.Net
 
             OperacaoStatus = "Soma";
             Visor.Text = "";
+            OperacaoControle = "+";
+
         }
 
         private void Button_Subtracao_Click(object sender, EventArgs e)
@@ -128,6 +140,7 @@ namespace Calculadora.Net
 
             OperacaoStatus = "Subtracao";
             Visor.Text = "";
+            OperacaoControle = "-";
         }
 
         private void Button_Multiplicacao_Click(object sender, EventArgs e)
@@ -160,7 +173,7 @@ namespace Calculadora.Net
         private void Button_Porcento_Click(object sender, EventArgs e)
         {
             if (Visor.Text != "")
-                Num1 = double.Parse(Visor.Text, CultureInfo.InvariantCulture);
+                Num2 = double.Parse(Visor.Text, CultureInfo.InvariantCulture);
 
             OperacaoStatus = "Porcento";
             Visor.Text = "";

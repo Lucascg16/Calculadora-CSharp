@@ -68,18 +68,17 @@ namespace Calculadora.Net
         /// <returns></returns>
         public static double Raiz_Quadrada(double x)
         {
-            return Math.Pow(x, 1 / 2);
+            return Math.Sqrt(x);
         }
 
         /// <summary>
         /// Calcula a porcentagem entre 2 numeros
         /// </summary>
         /// <param name="x"></param>
-        /// <param name="y"></param>
         /// <returns></returns>
-        public static double Porcentagem(double x, double y)
+        public static double Porcentagem(double x)
         {
-            return (x * y) / 100;
+            return x / 100;
         }
     }
 }
