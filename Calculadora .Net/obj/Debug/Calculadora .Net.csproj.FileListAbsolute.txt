@@ -20,3 +20,14 @@ C:\Users\lucas\Documents\GitHub\Calculadora-CSharp\Calculadora .Net\obj\Debug\Ca
 C:\Users\lucas\Documents\GitHub\Calculadora-CSharp\Calculadora .Net\obj\Debug\Calculadora .Net.csproj.CoreCompileInputs.cache
 C:\Users\lucas\Documents\GitHub\Calculadora-CSharp\Calculadora .Net\obj\Debug\Calculadora.Net.exe
 C:\Users\lucas\Documents\GitHub\Calculadora-CSharp\Calculadora .Net\obj\Debug\Calculadora.Net.pdb
+C:\Projetos\Calculadora-CSharp\Calculadora .Net\obj\Debug\Calculadora .Net.csproj.AssemblyReference.cache
+C:\Projetos\Calculadora-CSharp\Calculadora .Net\obj\Debug\Calculadora .Net.csproj.SuggestedBindingRedirects.cache
+C:\Projetos\Calculadora-CSharp\Calculadora .Net\obj\Debug\Calculadora.Net.Calculadora.resources
+C:\Projetos\Calculadora-CSharp\Calculadora .Net\obj\Debug\Calculadora.Net.Properties.Resources.resources
+C:\Projetos\Calculadora-CSharp\Calculadora .Net\obj\Debug\Calculadora .Net.csproj.GenerateResource.cache
+C:\Projetos\Calculadora-CSharp\Calculadora .Net\obj\Debug\Calculadora .Net.csproj.CoreCompileInputs.cache
+C:\Projetos\Calculadora-CSharp\Calculadora .Net\obj\Debug\Calculadora.Net.exe
+C:\Projetos\Calculadora-CSharp\Calculadora .Net\obj\Debug\Calculadora.Net.pdb
+C:\Projetos\Calculadora-CSharp\Calculadora .Net\bin\Debug\Calculadora.Net.exe.config
+C:\Projetos\Calculadora-CSharp\Calculadora .Net\bin\Debug\Calculadora.Net.exe
+C:\Projetos\Calculadora-CSharp\Calculadora .Net\bin\Debug\Calculadora.Net.pdb

@@ -1,14 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Calculadora;
 
 namespace Calculadora.Net
 {
@@ -19,7 +11,7 @@ namespace Calculadora.Net
         public Calculadora()
         {
             InitializeComponent();
-            
+
         }
 
         private void Button_Zero_Click(object sender, EventArgs e)
@@ -87,7 +79,7 @@ namespace Calculadora.Net
             switch (OperacaoStatus)
             {
                 case "Soma":
-                    if(Visor.Text != "")
+                    if (Visor.Text != "")
                         Num2 = double.Parse(Visor.Text, CultureInfo.InvariantCulture);
                     Visor.Text = Convert.ToString(Calculos.Soma(Num1, Num2));
                     break;
@@ -118,7 +110,6 @@ namespace Calculadora.Net
                     Visor.Text = Convert.ToString(Calculos.Raiz_Quadrada(Num1));
                     break;
             }
-            Operacao.Text = "";
         }
 
         private void Button_Soma_Click(object sender, EventArgs e)
@@ -126,7 +117,6 @@ namespace Calculadora.Net
             if (Visor.Text != "")
                 Num1 = double.Parse(Visor.Text, CultureInfo.InvariantCulture);
 
-            Operacao.Text = "+";
             OperacaoStatus = "Soma";
             Visor.Text = "";
         }
@@ -136,17 +126,15 @@ namespace Calculadora.Net
             if (Visor.Text != "")
                 Num1 = double.Parse(Visor.Text, CultureInfo.InvariantCulture);
 
-            Operacao.Text = "-";
             OperacaoStatus = "Subtracao";
             Visor.Text = "";
         }
 
         private void Button_Multiplicacao_Click(object sender, EventArgs e)
         {
-            if(Visor.Text != "")
+            if (Visor.Text != "")
                 Num1 = double.Parse(Visor.Text, CultureInfo.InvariantCulture);
 
-            Operacao.Text = "x";
             OperacaoStatus = "Multiplicacao";
             Visor.Text = "";
         }
@@ -156,10 +144,35 @@ namespace Calculadora.Net
             if (Visor.Text != "")
                 Num1 = double.Parse(Visor.Text, CultureInfo.InvariantCulture);
 
-            Operacao.Text = "/";
             OperacaoStatus = "Divisao";
             Visor.Text = "";
         }
-        
+
+        private void Button_Elevado_Click(object sender, EventArgs e)
+        {
+            if (Visor.Text != "")
+                Num1 = double.Parse(Visor.Text, CultureInfo.InvariantCulture);
+
+            OperacaoStatus = "Elevado";
+            Button_Resultado_Click_1(null, null);
+        }
+
+        private void Button_Porcento_Click(object sender, EventArgs e)
+        {
+            if (Visor.Text != "")
+                Num1 = double.Parse(Visor.Text, CultureInfo.InvariantCulture);
+
+            OperacaoStatus = "Porcento";
+            Visor.Text = "";
+        }
+
+        private void Button_Raiz_Click(object sender, EventArgs e)
+        {
+            if (Visor.Text != "")
+                Num1 = double.Parse(Visor.Text, CultureInfo.InvariantCulture);
+
+            OperacaoStatus = "Raiz";
+            Button_Resultado_Click_1(null, null);
+        }
     }
 }
