@@ -6,143 +6,153 @@ namespace Calculadora.Net
 {
     public partial class Calculadora : Form
     {
-        double Num1 = 0, Num2 = 0;
-        string OperacaoStatus = "", OperacaoControle = "";
-        bool ControleContinuidade = true;
+        double Num1 = 0, Num2 = 0;//Os dois valores que a calculadora precisa pra fazer o calculo.
+        string OperacaoStatus = "", OperacaoControle = "";//OpStatus - indica a calculadora qual conta ela deve fazer. || OpControle - indica a calculadora se a porcentagem e somando ou subtraindo.
+        bool ControleContinuidade = true;//Indica se a conta vai continuar ou se ela vai resetar e comecar um novo ciclo, setado como true nao existe continuidade.
         public Calculadora()
         {
             InitializeComponent();
-
+            VisorAux.Text = string.Empty;
         }
 
         private void Button_Zero_Click(object sender, EventArgs e)
         {
-            Visor.Text += "0";
-            VisorAux.Text = "";
-
             if (ControleContinuidade == false)
             {
                 Num1 = 0;
                 Num2 = 0;
+                Visor.Text = "";
+                VisorAux.Text = "";
                 ControleContinuidade = true;
             }
+            Visor.Text += "0";
+
         }
 
         private void Button_Um_Click(object sender, EventArgs e)
         {
-            Visor.Text += "1";
-            VisorAux.Text = "";
-
             if (ControleContinuidade == false)
             {
                 Num1 = 0;
                 Num2 = 0;
+                Visor.Text = "";
+                VisorAux.Text = "";
                 ControleContinuidade = true;
             }
+
+            Visor.Text += "1";            
         }
 
         private void Button_Dois_Click(object sender, EventArgs e)
         {
-            Visor.Text += "2";
-            VisorAux.Text = "";
-
             if (ControleContinuidade == false)
             {
                 Num1 = 0;
                 Num2 = 0;
+                Visor.Text = "";
+                VisorAux.Text = "";
                 ControleContinuidade = true;
             }
+
+            Visor.Text += "2";
         }
 
         private void Button_Tres_Click(object sender, EventArgs e)
         {
-            Visor.Text += "3";
-            VisorAux.Text = "";
-
             if (ControleContinuidade == false)
             {
                 Num1 = 0;
                 Num2 = 0;
+                Visor.Text = "";
+                VisorAux.Text = "";
                 ControleContinuidade = true;
             }
+
+            Visor.Text += "3";
         }
 
         private void Button_Quatro_Click(object sender, EventArgs e)
         {
-            Visor.Text += "4";
-            VisorAux.Text = "";
-
             if (ControleContinuidade == false)
             {
                 Num1 = 0;
                 Num2 = 0;
+                Visor.Text = "";
+                VisorAux.Text = "";
                 ControleContinuidade = true;
             }
+
+            Visor.Text += "4";
         }
 
         private void Button_Cinco_Click(object sender, EventArgs e)
         {
-            Visor.Text += "5";
-            VisorAux.Text = "";
-
             if (ControleContinuidade == false)
             {
                 Num1 = 0;
                 Num2 = 0;
+                Visor.Text = "";
+                VisorAux.Text = "";
                 ControleContinuidade = true;
             }
+
+            Visor.Text += "5";
         }
 
         private void Button_Seis_Click(object sender, EventArgs e)
         {
-            Visor.Text += "6";
-            VisorAux.Text = "";
-
             if (ControleContinuidade == false)
             {
                 Num1 = 0;
                 Num2 = 0;
+                Visor.Text = "";
+                VisorAux.Text = "";
                 ControleContinuidade = true;
             }
+
+            Visor.Text += "6";
         }
 
         private void Button_Sete_Click(object sender, EventArgs e)
         {
-            Visor.Text += "7";
-            VisorAux.Text = "";
-
             if (ControleContinuidade == false)
             {
                 Num1 = 0;
                 Num2 = 0;
+                Visor.Text = "";
+                VisorAux.Text = "";
                 ControleContinuidade = true;
             }
+
+            Visor.Text += "7";
         }
 
         private void Button_Oito_Click(object sender, EventArgs e)
         {
-            Visor.Text += "8";
-            VisorAux.Text = "";
-
             if (ControleContinuidade == false)
             {
                 Num1 = 0;
                 Num2 = 0;
+                Visor.Text = "";
+                VisorAux.Text = "";
                 ControleContinuidade = true;
             }
+
+            Visor.Text += "8";
         }
 
         private void Button_Nove_Click(object sender, EventArgs e)
         {
-            Visor.Text += "9";
-            VisorAux.Text = "";
-
             if (ControleContinuidade == false)
             {
                 Num1 = 0;
                 Num2 = 0;
+                Visor.Text = "";
+                VisorAux.Text = "";
                 ControleContinuidade = true;
             }
+
+            Visor.Text += "9";         
         }
 
         private void Button_Ponto_Click(object sender, EventArgs e)
@@ -156,6 +166,7 @@ namespace Calculadora.Net
         private void Cancel_Click(object sender, EventArgs e)
         {
             Visor.Text = "";
+            VisorAux.Text = "";
             Num1 = 0;
             Num2 = 0;
         }
@@ -172,46 +183,62 @@ namespace Calculadora.Net
                 case "Soma":
                     if (Visor.Text != "")
                         Num2 = double.Parse(Visor.Text, CultureInfo.InvariantCulture);
+                        VisorAux.Text += $"{Convert.ToString(Num2)} =";
+
                     Visor.Text = Convert.ToString(Calculos.Soma(Num1, Num2));
                     ControleContinuidade = false;
                     break;
+
                 case "Subtracao":
                     if (Visor.Text != "")
                         Num2 = double.Parse(Visor.Text, CultureInfo.InvariantCulture);
+                        VisorAux.Text += $"{Convert.ToString(Num2)} =";
+
                     Visor.Text = Convert.ToString(Calculos.Subtracao(Num1, Num2));
                     ControleContinuidade = false;
                     break;
+
                 case "Multiplicacao":
                     if (Visor.Text != "")
                         Num2 = double.Parse(Visor.Text, CultureInfo.InvariantCulture);
+                        VisorAux.Text += $"{Convert.ToString(Num2)} =";
+
                     Visor.Text = Convert.ToString(Calculos.Multiplicacao(Num1, Num2));
                     ControleContinuidade = false;
                     break;
+
                 case "Divisao":
                     if (Visor.Text != "")
                         Num2 = double.Parse(Visor.Text, CultureInfo.InvariantCulture);
+                        VisorAux.Text += $"{Convert.ToString(Num2)} =";
+
                     Visor.Text = Convert.ToString(Calculos.Divisao(Num1, Num2));
                     ControleContinuidade = false;
                     break;
+
                 case "Porcento":
                     double Resultado;
                     var porcento = Calculos.Porcentagem(Num2);
 
                     if (OperacaoControle == "+")
                     {
+                        VisorAux.Text += $"{Convert.ToString(Num2)} =";
                         Resultado = Num1 / porcento;
                         Visor.Text = Convert.ToString(Num1 + Resultado);
                     }else if (OperacaoControle == "-")
                     {
+                        VisorAux.Text += $"{Convert.ToString(Num2)} =";
                         Resultado = Num1 * porcento;
                         Visor.Text = Convert.ToString(Num1 - Resultado);
                     }
                     ControleContinuidade = false;
                     break;
+
                 case "Elevado":
                     Visor.Text = Convert.ToString(Calculos.Quadrado(Num1));
                     ControleContinuidade = false;
                     break;
+
                 case "Raiz":
                     Visor.Text = Convert.ToString(Calculos.Raiz_Quadrada(Num1));
                     ControleContinuidade = false;
@@ -223,6 +250,10 @@ namespace Calculadora.Net
         {
             if (Visor.Text != "")
                 Num1 = double.Parse(Visor.Text, CultureInfo.InvariantCulture);
+                VisorAux.Text = $"{Convert.ToString(Num1)} + ";
+
+            if (ControleContinuidade == true)
+                Button_Resultado_Click_1(null, null);
 
             OperacaoStatus = "Soma";
             Visor.Text = "";
@@ -234,6 +265,7 @@ namespace Calculadora.Net
         {
             if (Visor.Text != "")
                 Num1 = double.Parse(Visor.Text, CultureInfo.InvariantCulture);
+                VisorAux.Text = $"{Convert.ToString(Num1)} - ";
 
             OperacaoStatus = "Subtracao";
             Visor.Text = "";
@@ -245,6 +277,7 @@ namespace Calculadora.Net
         {
             if (Visor.Text != "")
                 Num1 = double.Parse(Visor.Text, CultureInfo.InvariantCulture);
+                VisorAux.Text = $"{Convert.ToString(Num1)} X ";
 
             OperacaoStatus = "Multiplicacao";
             Visor.Text = "";
@@ -255,6 +288,7 @@ namespace Calculadora.Net
         {
             if (Visor.Text != "")
                 Num1 = double.Parse(Visor.Text, CultureInfo.InvariantCulture);
+                VisorAux.Text = $"{Convert.ToString(Num1)} ÷ ";
 
             OperacaoStatus = "Divisao";
             Visor.Text = "";
@@ -265,6 +299,7 @@ namespace Calculadora.Net
         {
             if (Visor.Text != "")
                 Num1 = double.Parse(Visor.Text, CultureInfo.InvariantCulture);
+                VisorAux.Text = $"sqrt({Convert.ToString(Num1)})";
 
             OperacaoStatus = "Elevado";
             ControleContinuidade = true;
@@ -285,10 +320,12 @@ namespace Calculadora.Net
         {
             if (Visor.Text != "")
                 Num1 = double.Parse(Visor.Text, CultureInfo.InvariantCulture);
+                VisorAux.Text = $"√({Convert.ToString(Num1)})";
 
             OperacaoStatus = "Raiz";
             ControleContinuidade = true;
             Button_Resultado_Click_1(null, null);
         }
+
     }
 }

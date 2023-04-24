@@ -239,12 +239,12 @@
             // 
             // Button_Divisao
             // 
-            this.Button_Divisao.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Button_Divisao.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Button_Divisao.Location = new System.Drawing.Point(180, 80);
             this.Button_Divisao.Name = "Button_Divisao";
             this.Button_Divisao.Size = new System.Drawing.Size(50, 30);
             this.Button_Divisao.TabIndex = 17;
-            this.Button_Divisao.Text = "/";
+            this.Button_Divisao.Text = "÷";
             this.Button_Divisao.UseVisualStyleBackColor = true;
             this.Button_Divisao.Click += new System.EventHandler(this.Button_Divisao_Click);
             // 
@@ -340,6 +340,7 @@
             this.Controls.Add(this.Button_Seis);
             this.Controls.Add(this.Button_Quatro);
             this.Controls.Add(this.Button_Cinco);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Calculadora";
             this.Text = "Calculadora";

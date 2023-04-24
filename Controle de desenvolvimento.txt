@@ -1,0 +1,5 @@
+O que eu preciso fazer:
+	Criar um segundo visor para poder mostrar a lista de contas;
+	Adicionar uma forma de apagar apenas um número caso digite errado;
+	Deve ter uma forma de fazer com que tenha como digitar usando o teclado fisico do pc - pesquisar sobre.
+	
