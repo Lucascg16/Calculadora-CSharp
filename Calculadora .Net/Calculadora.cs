@@ -252,9 +252,6 @@ namespace Calculadora.Net
                 Num1 = double.Parse(Visor.Text, CultureInfo.InvariantCulture);
                 VisorAux.Text = $"{Convert.ToString(Num1)} + ";
 
-            if (ControleContinuidade == true)
-                Button_Resultado_Click_1(null, null);
-
             OperacaoStatus = "Soma";
             Visor.Text = "";
             OperacaoControle = "+";
