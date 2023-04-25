@@ -8,7 +8,7 @@ namespace Calculadora.Net
     {
         double Num1 = 0, Num2 = 0;//Os dois valores que a calculadora precisa pra fazer o calculo.
         string OperacaoStatus = "", OperacaoControle = "";//OpStatus - indica a calculadora qual conta ela deve fazer. || OpControle - indica a calculadora se a porcentagem e somando ou subtraindo.
-        bool ControleContinuidade = true;//Indica se a conta vai continuar ou se ela vai resetar e comecar um novo ciclo, setado como true nao existe continuidade.
+        bool ControleContinuidade = true;//Indica se a conta vai continuar ou se ela vai resetar e comecar um novo ciclo, setado como false nao existe continuidade.
         public Calculadora()
         {
             InitializeComponent();
