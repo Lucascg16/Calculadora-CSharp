@@ -217,19 +217,20 @@ namespace Calculadora.Net
                     break;
 
                 case "Porcento":
-                    double Resultado;
-                    var porcento = Calculos.Porcentagem(Num2);
+                    double Resultado, porcento = Calculos.Porcentagem(Num1, Num2);
 
                     if (OperacaoControle == "+")
                     {
-                        VisorAux.Text += $"{Convert.ToString(Num2)} =";
-                        Resultado = Num1 / porcento;
-                        Visor.Text = Convert.ToString(Num1 + Resultado);
-                    }else if (OperacaoControle == "-")
+                        Resultado = Num1 + porcento;
+                        Visor.Text = Convert.ToString(Resultado);
+                        VisorAux.Text += $"{Convert.ToString(porcento)} =";
+                    }
+                    else if (OperacaoControle == "-")
                     {
-                        VisorAux.Text += $"{Convert.ToString(Num2)} =";
-                        Resultado = Num1 * porcento;
-                        Visor.Text = Convert.ToString(Num1 - Resultado);
+
+                        Resultado = Num1 - porcento;
+                        Visor.Text = Convert.ToString(Resultado);
+                        VisorAux.Text += $"{Convert.ToString(porcento)} =";
                     }
                     ControleContinuidade = false;
                     break;

@@ -76,9 +76,9 @@ namespace Calculadora.Net
         /// </summary>
         /// <param name="x"></param>
         /// <returns></returns>
-        public static double Porcentagem(double x)
+        public static double Porcentagem(double x, double y)
         {
-            return x / 100;
+            return x * (y / 100);
         }
     }
 }
