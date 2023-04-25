@@ -227,7 +227,6 @@ namespace Calculadora.Net
                     }
                     else if (OperacaoControle == "-")
                     {
-
                         Resultado = Num1 - porcento;
                         Visor.Text = Convert.ToString(Resultado);
                         VisorAux.Text += $"{Convert.ToString(porcento)} =";
