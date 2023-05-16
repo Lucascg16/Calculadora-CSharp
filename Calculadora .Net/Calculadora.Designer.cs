@@ -192,6 +192,7 @@
             this.Button_Inverter.TabIndex = 12;
             this.Button_Inverter.Text = "+/-";
             this.Button_Inverter.UseVisualStyleBackColor = true;
+            this.Button_Inverter.Click += new System.EventHandler(this.Button_Inverter_Click);
             // 
             // Button_Ponto
             // 

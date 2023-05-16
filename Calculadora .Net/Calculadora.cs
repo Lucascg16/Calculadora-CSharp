@@ -163,6 +163,13 @@ namespace Calculadora.Net
                 Visor.Text += ".";
         }
 
+        private void Button_Inverter_Click(object sender, EventArgs e)
+        {
+            Num1 = double.Parse(Visor.Text, CultureInfo.InvariantCulture);
+            Num1 *= -1;
+            Visor.Text = Convert.ToString(Num1);
+        }
+
         private void Cancel_Click(object sender, EventArgs e)
         {
             Visor.Text = "";

@@ -31,3 +31,14 @@ C:\Projetos\Calculadora-CSharp\Calculadora .Net\obj\Debug\Calculadora.Net.pdb
 C:\Projetos\Calculadora-CSharp\Calculadora .Net\bin\Debug\Calculadora.Net.exe.config
 C:\Projetos\Calculadora-CSharp\Calculadora .Net\bin\Debug\Calculadora.Net.exe
 C:\Projetos\Calculadora-CSharp\Calculadora .Net\bin\Debug\Calculadora.Net.pdb
+C:\Users\luqui\OneDrive\Documentos\GitHub\Calculadora-CSharp\Calculadora .Net\obj\Debug\Calculadora.Net.exe
+C:\Users\luqui\OneDrive\Documentos\GitHub\Calculadora-CSharp\Calculadora .Net\obj\Debug\Calculadora.Net.pdb
+C:\Users\luqui\OneDrive\Documentos\GitHub\Calculadora-CSharp\Calculadora .Net\bin\Debug\Calculadora.Net.exe.config
+C:\Users\luqui\OneDrive\Documentos\GitHub\Calculadora-CSharp\Calculadora .Net\bin\Debug\Calculadora.Net.exe
+C:\Users\luqui\OneDrive\Documentos\GitHub\Calculadora-CSharp\Calculadora .Net\bin\Debug\Calculadora.Net.pdb
+C:\Users\luqui\OneDrive\Documentos\GitHub\Calculadora-CSharp\Calculadora .Net\obj\Debug\Calculadora .Net.csproj.AssemblyReference.cache
+C:\Users\luqui\OneDrive\Documentos\GitHub\Calculadora-CSharp\Calculadora .Net\obj\Debug\Calculadora .Net.csproj.SuggestedBindingRedirects.cache
+C:\Users\luqui\OneDrive\Documentos\GitHub\Calculadora-CSharp\Calculadora .Net\obj\Debug\Calculadora.Net.Calculadora.resources
+C:\Users\luqui\OneDrive\Documentos\GitHub\Calculadora-CSharp\Calculadora .Net\obj\Debug\Calculadora.Net.Properties.Resources.resources
+C:\Users\luqui\OneDrive\Documentos\GitHub\Calculadora-CSharp\Calculadora .Net\obj\Debug\Calculadora .Net.csproj.GenerateResource.cache
+C:\Users\luqui\OneDrive\Documentos\GitHub\Calculadora-CSharp\Calculadora .Net\obj\Debug\Calculadora .Net.csproj.CoreCompileInputs.cache
