@@ -189,8 +189,10 @@ namespace Calculadora.Net
             {
                 case "Soma":
                     if (Visor.Text != "")
+                    {
                         Num2 = double.Parse(Visor.Text, CultureInfo.InvariantCulture);
                         VisorAux.Text += $"{Convert.ToString(Num2)} =";
+                    }                      
 
                     Visor.Text = Convert.ToString(Calculos.Soma(Num1, Num2));
                     ControleContinuidade = false;
@@ -198,8 +200,10 @@ namespace Calculadora.Net
 
                 case "Subtracao":
                     if (Visor.Text != "")
+                    {
                         Num2 = double.Parse(Visor.Text, CultureInfo.InvariantCulture);
                         VisorAux.Text += $"{Convert.ToString(Num2)} =";
+                    }                   
 
                     Visor.Text = Convert.ToString(Calculos.Subtracao(Num1, Num2));
                     ControleContinuidade = false;
@@ -207,8 +211,10 @@ namespace Calculadora.Net
 
                 case "Multiplicacao":
                     if (Visor.Text != "")
+                    {
                         Num2 = double.Parse(Visor.Text, CultureInfo.InvariantCulture);
                         VisorAux.Text += $"{Convert.ToString(Num2)} =";
+                    }
 
                     Visor.Text = Convert.ToString(Calculos.Multiplicacao(Num1, Num2));
                     ControleContinuidade = false;
@@ -216,8 +222,10 @@ namespace Calculadora.Net
 
                 case "Divisao":
                     if (Visor.Text != "")
+                    {
                         Num2 = double.Parse(Visor.Text, CultureInfo.InvariantCulture);
                         VisorAux.Text += $"{Convert.ToString(Num2)} =";
+                    }
 
                     Visor.Text = Convert.ToString(Calculos.Divisao(Num1, Num2));
                     ControleContinuidade = false;
@@ -256,9 +264,11 @@ namespace Calculadora.Net
         private void Button_Soma_Click(object sender, EventArgs e)
         {
             if (Visor.Text != "")
+            {
                 Num1 = double.Parse(Visor.Text, CultureInfo.InvariantCulture);
                 VisorAux.Text = $"{Convert.ToString(Num1)} + ";
-
+            }
+                
             OperacaoStatus = "Soma";
             Visor.Text = "";
             OperacaoControle = "+";
@@ -268,8 +278,10 @@ namespace Calculadora.Net
         private void Button_Subtracao_Click(object sender, EventArgs e)
         {
             if (Visor.Text != "")
+            {
                 Num1 = double.Parse(Visor.Text, CultureInfo.InvariantCulture);
                 VisorAux.Text = $"{Convert.ToString(Num1)} - ";
+            }               
 
             OperacaoStatus = "Subtracao";
             Visor.Text = "";
@@ -280,8 +292,10 @@ namespace Calculadora.Net
         private void Button_Multiplicacao_Click(object sender, EventArgs e)
         {
             if (Visor.Text != "")
+            {
                 Num1 = double.Parse(Visor.Text, CultureInfo.InvariantCulture);
                 VisorAux.Text = $"{Convert.ToString(Num1)} X ";
+            }               
 
             OperacaoStatus = "Multiplicacao";
             Visor.Text = "";
@@ -291,8 +305,10 @@ namespace Calculadora.Net
         private void Button_Divisao_Click(object sender, EventArgs e)
         {
             if (Visor.Text != "")
+            {
                 Num1 = double.Parse(Visor.Text, CultureInfo.InvariantCulture);
                 VisorAux.Text = $"{Convert.ToString(Num1)} ÷ ";
+            }               
 
             OperacaoStatus = "Divisao";
             Visor.Text = "";
@@ -302,8 +318,10 @@ namespace Calculadora.Net
         private void Button_Elevado_Click(object sender, EventArgs e)
         {
             if (Visor.Text != "")
+            {
                 Num1 = double.Parse(Visor.Text, CultureInfo.InvariantCulture);
                 VisorAux.Text = $"sqrt({Convert.ToString(Num1)})";
+            }               
 
             OperacaoStatus = "Elevado";
             ControleContinuidade = true;
@@ -323,8 +341,10 @@ namespace Calculadora.Net
         private void Button_Raiz_Click(object sender, EventArgs e)
         {
             if (Visor.Text != "")
+            {
                 Num1 = double.Parse(Visor.Text, CultureInfo.InvariantCulture);
                 VisorAux.Text = $"√({Convert.ToString(Num1)})";
+            }
 
             OperacaoStatus = "Raiz";
             ControleContinuidade = true;
