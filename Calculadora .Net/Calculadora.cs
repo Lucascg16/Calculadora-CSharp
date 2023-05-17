@@ -6,7 +6,7 @@ namespace Calculadora.Net
 {
     public partial class Calculadora : Form
     {
-        double Num1 = 0, Num2 = 0;//Os dois valores que a calculadora precisa pra fazer o calculo.
+        double Num1 = 0, Num2 = 0, resultado = 0;//Os dois valores que a calculadora precisa pra fazer o calculo.
         string OperacaoStatus = "", OperacaoControle = "";//OpStatus - indica a calculadora qual conta ela deve fazer. || OpControle - indica a calculadora se a porcentagem e somando ou subtraindo.
         bool ControleContinuidade = true;//Indica se a conta vai continuar ou se ela vai resetar e comecar um novo ciclo, setado como false nao existe continuidade.
         public Calculadora()
@@ -190,44 +190,80 @@ namespace Calculadora.Net
                 case "Soma":
                     if (Visor.Text != "")
                     {
-                        Num2 = double.Parse(Visor.Text, CultureInfo.InvariantCulture);
-                        VisorAux.Text += $"{Convert.ToString(Num2)} =";
-                    }                      
+                        if (ControleContinuidade == true)
+                        {
+                            Num2 = double.Parse(Visor.Text, CultureInfo.InvariantCulture);
+                            VisorAux.Text += $"{Convert.ToString(Num2)} =";
+                            resultado = Calculos.Soma(Num1, Num2);
+                        }
+                        else
+                        {
+                            resultado += Num2;
+                            VisorAux.Text = $"{Convert.ToString(resultado - Num2)} + {Convert.ToString(Num2)} =";
+                        }
+                    }                   
 
-                    Visor.Text = Convert.ToString(Calculos.Soma(Num1, Num2));
+                    Visor.Text = Convert.ToString(resultado);
                     ControleContinuidade = false;
                     break;
 
                 case "Subtracao":
                     if (Visor.Text != "")
                     {
-                        Num2 = double.Parse(Visor.Text, CultureInfo.InvariantCulture);
-                        VisorAux.Text += $"{Convert.ToString(Num2)} =";
+                        if (ControleContinuidade == true)
+                        {
+                            Num2 = double.Parse(Visor.Text, CultureInfo.InvariantCulture);
+                            VisorAux.Text += $"{Convert.ToString(Num2)} =";
+                            resultado = Calculos.Subtracao(Num1, Num2);
+                        }
+                        else
+                        {
+                            resultado -= Num2;
+                            VisorAux.Text = $"{Convert.ToString(resultado + Num2)} - {Convert.ToString(Num2)} =";
+                        }
                     }                   
 
-                    Visor.Text = Convert.ToString(Calculos.Subtracao(Num1, Num2));
+                    Visor.Text = Convert.ToString(resultado);
                     ControleContinuidade = false;
                     break;
 
                 case "Multiplicacao":
                     if (Visor.Text != "")
                     {
-                        Num2 = double.Parse(Visor.Text, CultureInfo.InvariantCulture);
-                        VisorAux.Text += $"{Convert.ToString(Num2)} =";
+                        if (ControleContinuidade == true)
+                        {
+                            Num2 = double.Parse(Visor.Text, CultureInfo.InvariantCulture);
+                            VisorAux.Text += $"{Convert.ToString(Num2)} =";
+                            resultado = Calculos.Multiplicacao(Num1, Num2);
+                        }
+                        else
+                        {
+                            resultado *= Num2;
+                            VisorAux.Text = $"{Convert.ToString(resultado / Num2)} x {Convert.ToString(Num2)} =";
+                        }
                     }
 
-                    Visor.Text = Convert.ToString(Calculos.Multiplicacao(Num1, Num2));
+                    Visor.Text = Convert.ToString(resultado);
                     ControleContinuidade = false;
                     break;
 
                 case "Divisao":
                     if (Visor.Text != "")
                     {
-                        Num2 = double.Parse(Visor.Text, CultureInfo.InvariantCulture);
-                        VisorAux.Text += $"{Convert.ToString(Num2)} =";
+                        if (ControleContinuidade == true)
+                        {
+                            Num2 = double.Parse(Visor.Text, CultureInfo.InvariantCulture);
+                            VisorAux.Text += $"{Convert.ToString(Num2)} =";
+                            resultado = Calculos.Divisao(Num1, Num2);
+                        }
+                        else
+                        {
+                            resultado /= Num2;
+                            VisorAux.Text = $"{Convert.ToString(resultado * Num2)} ÷ {Convert.ToString(Num2)} =";
+                        }
                     }
 
-                    Visor.Text = Convert.ToString(Calculos.Divisao(Num1, Num2));
+                    Visor.Text = Convert.ToString(resultado);
                     ControleContinuidade = false;
                     break;
 

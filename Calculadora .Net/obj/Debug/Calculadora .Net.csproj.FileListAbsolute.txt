@@ -42,3 +42,22 @@ C:\Users\luqui\OneDrive\Documentos\GitHub\Calculadora-CSharp\Calculadora .Net\ob
 C:\Users\luqui\OneDrive\Documentos\GitHub\Calculadora-CSharp\Calculadora .Net\obj\Debug\Calculadora.Net.Properties.Resources.resources
 C:\Users\luqui\OneDrive\Documentos\GitHub\Calculadora-CSharp\Calculadora .Net\obj\Debug\Calculadora .Net.csproj.GenerateResource.cache
 C:\Users\luqui\OneDrive\Documentos\GitHub\Calculadora-CSharp\Calculadora .Net\obj\Debug\Calculadora .Net.csproj.CoreCompileInputs.cache
+C:\Users\luqui\Documents\GitHub\Calculadora-CSharp\Calculadora .Net\bin\Debug\Calculadora.Net.exe.config
+C:\Users\luqui\Documents\GitHub\Calculadora-CSharp\Calculadora .Net\bin\Debug\Calculadora.Net.exe
+C:\Users\luqui\Documents\GitHub\Calculadora-CSharp\Calculadora .Net\bin\Debug\Calculadora.Net.pdb
+C:\Users\luqui\Documents\GitHub\Calculadora-CSharp\Calculadora .Net\bin\Debug\mscorlib.dll
+C:\Users\luqui\Documents\GitHub\Calculadora-CSharp\Calculadora .Net\bin\Debug\pt-BR\mscorlib.resources.dll
+C:\Users\luqui\Documents\GitHub\Calculadora-CSharp\Calculadora .Net\bin\Debug\normidna.nlp
+C:\Users\luqui\Documents\GitHub\Calculadora-CSharp\Calculadora .Net\bin\Debug\normnfc.nlp
+C:\Users\luqui\Documents\GitHub\Calculadora-CSharp\Calculadora .Net\bin\Debug\normnfd.nlp
+C:\Users\luqui\Documents\GitHub\Calculadora-CSharp\Calculadora .Net\bin\Debug\normnfkc.nlp
+C:\Users\luqui\Documents\GitHub\Calculadora-CSharp\Calculadora .Net\bin\Debug\normnfkd.nlp
+C:\Users\luqui\Documents\GitHub\Calculadora-CSharp\Calculadora .Net\obj\Debug\Calculadora .Net.csproj.AssemblyReference.cache
+C:\Users\luqui\Documents\GitHub\Calculadora-CSharp\Calculadora .Net\obj\Debug\Calculadora .Net.csproj.SuggestedBindingRedirects.cache
+C:\Users\luqui\Documents\GitHub\Calculadora-CSharp\Calculadora .Net\obj\Debug\Calculadora.Net.Calculadora.resources
+C:\Users\luqui\Documents\GitHub\Calculadora-CSharp\Calculadora .Net\obj\Debug\Calculadora.Net.Properties.Resources.resources
+C:\Users\luqui\Documents\GitHub\Calculadora-CSharp\Calculadora .Net\obj\Debug\Calculadora .Net.csproj.GenerateResource.cache
+C:\Users\luqui\Documents\GitHub\Calculadora-CSharp\Calculadora .Net\obj\Debug\Calculadora .Net.csproj.CoreCompileInputs.cache
+C:\Users\luqui\Documents\GitHub\Calculadora-CSharp\Calculadora .Net\obj\Debug\Calculadora .Net.csproj.CopyComplete
+C:\Users\luqui\Documents\GitHub\Calculadora-CSharp\Calculadora .Net\obj\Debug\Calculadora.Net.exe
+C:\Users\luqui\Documents\GitHub\Calculadora-CSharp\Calculadora .Net\obj\Debug\Calculadora.Net.pdb
