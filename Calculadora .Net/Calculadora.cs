@@ -183,6 +183,15 @@ namespace Calculadora.Net
             Visor.Text = string.Empty;
         }
 
+        private void BackSpace_Button_Click(object sender, EventArgs e)
+        {
+            string visor = Visor.Text;
+
+            visor = visor.Remove(visor.Length - 1);
+
+            Visor.Text = visor;
+        }
+
         private void Button_Resultado_Click_1(object sender, EventArgs e)
         {
             switch (OperacaoStatus)
@@ -385,6 +394,84 @@ namespace Calculadora.Net
             OperacaoStatus = "Raiz";
             ControleContinuidade = true;
             Button_Resultado_Click_1(null, null);
+        }
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            switch (keyData)
+            {
+                case Keys.D0:
+                case Keys.NumPad0:
+                    Button_Zero_Click(null, null);
+                    return true;
+                case Keys.D1:
+                case Keys.NumPad1:
+                    Button_Um_Click(null, null);
+                    return true;
+                case Keys.D2:
+                case Keys.NumPad2:
+                    Button_Dois_Click(null, null);
+                    return true;
+                case Keys.D3:
+                case Keys.NumPad3:
+                    Button_Tres_Click(null, null);
+                    return true;
+                case Keys.D4:
+                case Keys.NumPad4:
+                    Button_Quatro_Click(null, null);
+                    return true;
+                case Keys.D5:
+                case Keys.NumPad5:
+                    Button_Cinco_Click(null, null);
+                    return true;
+                case Keys.D6:
+                case Keys.NumPad6:
+                    Button_Seis_Click(null, null);
+                    return true;
+                case Keys.D7:
+                case Keys.NumPad7:
+                    Button_Sete_Click(null, null);
+                    return true;
+                case Keys.D8:
+                case Keys.NumPad8:
+                    Button_Oito_Click(null, null);
+                    return true;
+                case Keys.D9:
+                case Keys.NumPad9:
+                    Button_Nove_Click(null, null);
+                    return true;
+
+                case Keys.Add:
+                    Button_Soma_Click(null, null);
+                    return true;
+                case Keys.Subtract:
+                    Button_Subtracao_Click(null, null);
+                    return true;
+                case Keys.Multiply:
+                    Button_Multiplicacao_Click(null, null);
+                    return true;
+                case Keys.Divide:
+                    Button_Divisao_Click(null, null);
+                    return true;
+                case Keys.Decimal:
+                    Button_Ponto_Click(null, null);
+                    return true;
+
+                case Keys.Enter:
+                    Button_Resultado_Click_1(null, null);
+                    return true;
+                case Keys.Escape:
+                    Cancel_Click(null, null);
+                    return true;
+                case Keys.Back:
+                    BackSpace_Button_Click(null, null);
+                    return true;
+
+                default:
+                    break;
+            }
+
+            return base.ProcessCmdKey(ref msg, keyData);
         }
 
     }

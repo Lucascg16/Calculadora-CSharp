@@ -53,6 +53,7 @@
             this.Button_Soma = new System.Windows.Forms.Button();
             this.VisorAux = new System.Windows.Forms.Label();
             this.Clear = new System.Windows.Forms.Button();
+            this.BackSpace_Button = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Cancel
@@ -306,17 +307,29 @@
             // 
             this.Clear.Location = new System.Drawing.Point(124, 44);
             this.Clear.Name = "Clear";
-            this.Clear.Size = new System.Drawing.Size(106, 30);
+            this.Clear.Size = new System.Drawing.Size(50, 30);
             this.Clear.TabIndex = 23;
             this.Clear.Text = "CE";
             this.Clear.UseVisualStyleBackColor = true;
             this.Clear.Click += new System.EventHandler(this.Clear_Click);
+            // 
+            // BackSpace_Button
+            // 
+            this.BackSpace_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.BackSpace_Button.Image = ((System.Drawing.Image)(resources.GetObject("BackSpace_Button.Image")));
+            this.BackSpace_Button.Location = new System.Drawing.Point(180, 44);
+            this.BackSpace_Button.Name = "BackSpace_Button";
+            this.BackSpace_Button.Size = new System.Drawing.Size(50, 30);
+            this.BackSpace_Button.TabIndex = 24;
+            this.BackSpace_Button.UseVisualStyleBackColor = true;
+            this.BackSpace_Button.Click += new System.EventHandler(this.BackSpace_Button_Click);
             // 
             // Calculadora
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(242, 326);
+            this.Controls.Add(this.BackSpace_Button);
             this.Controls.Add(this.Clear);
             this.Controls.Add(this.VisorAux);
             this.Controls.Add(this.Cancel);
@@ -376,6 +389,7 @@
         private System.Windows.Forms.Button Button_Soma;
         private System.Windows.Forms.Label VisorAux;
         private System.Windows.Forms.Button Clear;
+        private System.Windows.Forms.Button BackSpace_Button;
     }
 }
 
