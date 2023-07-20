@@ -120,12 +120,12 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="BackSpace_Button.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAAHUAAAB1AePCB2UAAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwa
-        AAAAt0lEQVQ4T82SzQnCQBBGV/FqEZbhD+jFq55V9GgL3kTwIh61E1uwBK1BsAvft8lsYhLYQEB88GBm
-        YQZ2ZtxfMsBdDVfYwi+m+MIzniI+cImBHqp47LM4h1RPF5+49VnGHEdJ6FE8S8KsQRtveFFSYIhvnKQq
-        1psIDTZ4x46SCqzQGhmhwRobNbAvXJUUqPUFoSFqLcUhamDRIRqN1mjYIe2x6vryau0LLNHHI1ZdX14V
-        l0751zj3AX5ENhh8oMPSAAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
+        dAAAAHQBMYXlgQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAC3SURBVDhPzZLN
+        CcJAEEZX8WoRluEP6MWrnlX0aAveRPAiHrUTW7AErUGwC9+3yWxiEthAQHzwYGZhBnZm3F8ywF0NV9jC
+        L6b4wjOeIj5wiYEeqnjssziHVE8Xn7j1WcYcR0noUTxLwqxBG294UVJgiG+cpCrWmwgNNnjHjpIKrNAa
+        GaHBGhs1sC9clRSo9QWhIWotxSFqYNEhGo3WaNgh7bHq+vJq7Qss0ccjVl1fXhWXTvnXOPcBfkQ2GHyg
+        w9IAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

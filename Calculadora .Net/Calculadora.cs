@@ -15,167 +15,37 @@ namespace Calculadora.Net
             VisorAux.Text = string.Empty;
         }
 
-        private void Button_Zero_Click(object sender, EventArgs e)
+        private void Button_Number_Click(object sender, EventArgs e)
         {
             if (ControleContinuidade == false)
             {
-                Num1 = 0;
-                Num2 = 0;
-                Visor.Text = "";
-                VisorAux.Text = "";
+                CalculadoraClear();
                 ControleContinuidade = true;
             }
-            Visor.Text += "0";
-
-        }
-
-        private void Button_Um_Click(object sender, EventArgs e)
-        {
-            if (ControleContinuidade == false)
-            {
-                Num1 = 0;
-                Num2 = 0;
-                Visor.Text = "";
-                VisorAux.Text = "";
-                ControleContinuidade = true;
-            }
-
-            Visor.Text += "1";            
-        }
-
-        private void Button_Dois_Click(object sender, EventArgs e)
-        {
-            if (ControleContinuidade == false)
-            {
-                Num1 = 0;
-                Num2 = 0;
-                Visor.Text = "";
-                VisorAux.Text = "";
-                ControleContinuidade = true;
-            }
-
-            Visor.Text += "2";
-        }
-
-        private void Button_Tres_Click(object sender, EventArgs e)
-        {
-            if (ControleContinuidade == false)
-            {
-                Num1 = 0;
-                Num2 = 0;
-                Visor.Text = "";
-                VisorAux.Text = "";
-                ControleContinuidade = true;
-            }
-
-            Visor.Text += "3";
-        }
-
-        private void Button_Quatro_Click(object sender, EventArgs e)
-        {
-            if (ControleContinuidade == false)
-            {
-                Num1 = 0;
-                Num2 = 0;
-                Visor.Text = "";
-                VisorAux.Text = "";
-                ControleContinuidade = true;
-            }
-
-            Visor.Text += "4";
-        }
-
-        private void Button_Cinco_Click(object sender, EventArgs e)
-        {
-            if (ControleContinuidade == false)
-            {
-                Num1 = 0;
-                Num2 = 0;
-                Visor.Text = "";
-                VisorAux.Text = "";
-                ControleContinuidade = true;
-            }
-
-            Visor.Text += "5";
-        }
-
-        private void Button_Seis_Click(object sender, EventArgs e)
-        {
-            if (ControleContinuidade == false)
-            {
-                Num1 = 0;
-                Num2 = 0;
-                Visor.Text = "";
-                VisorAux.Text = "";
-                ControleContinuidade = true;
-            }
-
-            Visor.Text += "6";
-        }
-
-        private void Button_Sete_Click(object sender, EventArgs e)
-        {
-            if (ControleContinuidade == false)
-            {
-                Num1 = 0;
-                Num2 = 0;
-                Visor.Text = "";
-                VisorAux.Text = "";
-                ControleContinuidade = true;
-            }
-
-            Visor.Text += "7";
-        }
-
-        private void Button_Oito_Click(object sender, EventArgs e)
-        {
-            if (ControleContinuidade == false)
-            {
-                Num1 = 0;
-                Num2 = 0;
-                Visor.Text = "";
-                VisorAux.Text = "";
-                ControleContinuidade = true;
-            }
-
-            Visor.Text += "8";
-        }
-
-        private void Button_Nove_Click(object sender, EventArgs e)
-        {
-            if (ControleContinuidade == false)
-            {
-                Num1 = 0;
-                Num2 = 0;
-                Visor.Text = "";
-                VisorAux.Text = "";
-                ControleContinuidade = true;
-            }
-
-            Visor.Text += "9";         
+            Visor.Text += ((System.Windows.Forms.ButtonBase)sender).Text;
         }
 
         private void Button_Ponto_Click(object sender, EventArgs e)
         {
-            if (Visor.Text == "")
-                Visor.Text = "0.";
-            else
-                Visor.Text += ".";
+            if (!Visor.Text.Contains("."))
+            {
+                if (Visor.Text == "")
+                    Visor.Text = "0.";
+                else
+                    Visor.Text += ".";
+            }
         }
 
         private void Button_Inverter_Click(object sender, EventArgs e)
         {
-            Num1 = double.Parse(Visor.Text, CultureInfo.InvariantCulture);
+            double.TryParse(Visor.Text, out Num1);
             Num1 *= -1;
-            Visor.Text = Convert.ToString(Num1);
+            Visor.Text = Num1.ToString();
         }
 
         private void Cancel_Click(object sender, EventArgs e)
         {
-            Visor.Text = "";
-            VisorAux.Text = "";
-            Num1 = 0;
-            Num2 = 0;
+            CalculadoraClear();
         }
 
         private void Clear_Click(object sender, EventArgs e)
@@ -201,14 +71,14 @@ namespace Calculadora.Net
                     {
                         if (ControleContinuidade == true)
                         {
-                            Num2 = double.Parse(Visor.Text, CultureInfo.InvariantCulture);
-                            VisorAux.Text += $"{Convert.ToString(Num2)} =";
+                            double.TryParse(Visor.Text, out Num2);
+                            VisorAux.Text += $"{Num2} =";
                             resultado = Calculos.Soma(Num1, Num2);
                         }
                         else
                         {
                             resultado += Num2;
-                            VisorAux.Text = $"{Convert.ToString(resultado - Num2)} + {Convert.ToString(Num2)} =";
+                            VisorAux.Text = $"{resultado - Num2} + {Num2} =";
                         }
                     }                   
 
@@ -221,18 +91,18 @@ namespace Calculadora.Net
                     {
                         if (ControleContinuidade == true)
                         {
-                            Num2 = double.Parse(Visor.Text, CultureInfo.InvariantCulture);
-                            VisorAux.Text += $"{Convert.ToString(Num2)} =";
+                            double.TryParse(Visor.Text, out Num2);
+                            VisorAux.Text += $"{Num2} =";
                             resultado = Calculos.Subtracao(Num1, Num2);
                         }
                         else
                         {
                             resultado -= Num2;
-                            VisorAux.Text = $"{Convert.ToString(resultado + Num2)} - {Convert.ToString(Num2)} =";
+                            VisorAux.Text = $"{resultado + Num2} - {Num2} =";
                         }
                     }                   
 
-                    Visor.Text = Convert.ToString(resultado);
+                    Visor.Text = resultado.ToString();
                     ControleContinuidade = false;
                     break;
 
@@ -241,18 +111,18 @@ namespace Calculadora.Net
                     {
                         if (ControleContinuidade == true)
                         {
-                            Num2 = double.Parse(Visor.Text, CultureInfo.InvariantCulture);
-                            VisorAux.Text += $"{Convert.ToString(Num2)} =";
+                            double.TryParse(Visor.Text, out Num2);
+                            VisorAux.Text += $"{Num2} =";
                             resultado = Calculos.Multiplicacao(Num1, Num2);
                         }
                         else
                         {
                             resultado *= Num2;
-                            VisorAux.Text = $"{Convert.ToString(resultado / Num2)} x {Convert.ToString(Num2)} =";
+                            VisorAux.Text = $"{resultado / Num2} x {Num2} =";
                         }
                     }
 
-                    Visor.Text = Convert.ToString(resultado);
+                    Visor.Text = resultado.ToString();
                     ControleContinuidade = false;
                     break;
 
@@ -261,18 +131,18 @@ namespace Calculadora.Net
                     {
                         if (ControleContinuidade == true)
                         {
-                            Num2 = double.Parse(Visor.Text, CultureInfo.InvariantCulture);
-                            VisorAux.Text += $"{Convert.ToString(Num2)} =";
+                            double.TryParse(Visor.Text, out Num2);
+                            VisorAux.Text += $"{Num2} =";
                             resultado = Calculos.Divisao(Num1, Num2);
                         }
                         else
                         {
                             resultado /= Num2;
-                            VisorAux.Text = $"{Convert.ToString(resultado * Num2)} ÷ {Convert.ToString(Num2)} =";
+                            VisorAux.Text = $"{resultado * Num2} ÷ {Num2} =";
                         }
                     }
 
-                    Visor.Text = Convert.ToString(resultado);
+                    Visor.Text = resultado.ToString();
                     ControleContinuidade = false;
                     break;
 
@@ -282,25 +152,25 @@ namespace Calculadora.Net
                     if (OperacaoControle == "+")
                     {
                         resultado = Num1 + porcento;
-                        Visor.Text = Convert.ToString(resultado);
-                        VisorAux.Text += $"{Convert.ToString(porcento)} =";
+                        Visor.Text = resultado.ToString();
+                        VisorAux.Text += $"{porcento} =";
                     }
                     else if (OperacaoControle == "-")
                     {
                         resultado = Num1 - porcento;
-                        Visor.Text = Convert.ToString(resultado);
-                        VisorAux.Text += $"{Convert.ToString(porcento)} =";
+                        Visor.Text = resultado.ToString();
+                        VisorAux.Text += $"{porcento} =";
                     }
                     ControleContinuidade = false;
                     break;
 
                 case "Elevado":
-                    Visor.Text = Convert.ToString(Calculos.Quadrado(Num1));
+                    Visor.Text = Calculos.Quadrado(Num1).ToString();
                     ControleContinuidade = false;
                     break;
 
                 case "Raiz":
-                    Visor.Text = Convert.ToString(Calculos.Raiz_Quadrada(Num1));
+                    Visor.Text = Calculos.Raiz_Quadrada(Num1).ToString();
                     ControleContinuidade = false;
                     break;
             }
@@ -308,171 +178,78 @@ namespace Calculadora.Net
 
         private void Button_Soma_Click(object sender, EventArgs e)
         {
-            if (Visor.Text != "")
-            {
-                Num1 = double.Parse(Visor.Text, CultureInfo.InvariantCulture);
-                VisorAux.Text = $"{Convert.ToString(Num1)} + ";
-            }
-                
-            OperacaoStatus = "Soma";
-            Visor.Text = "";
+            Operacao("Soma", string.Empty, "+");
             OperacaoControle = "+";
-            ControleContinuidade = true;
         }
 
         private void Button_Subtracao_Click(object sender, EventArgs e)
         {
-            if (Visor.Text != "")
-            {
-                Num1 = double.Parse(Visor.Text, CultureInfo.InvariantCulture);
-                VisorAux.Text = $"{Convert.ToString(Num1)} - ";
-            }               
-
-            OperacaoStatus = "Subtracao";
-            Visor.Text = "";
+            Operacao("Subtracao", string.Empty, "-");
             OperacaoControle = "-";
-            ControleContinuidade = true;
         }
 
         private void Button_Multiplicacao_Click(object sender, EventArgs e)
         {
-            if (Visor.Text != "")
-            {
-                Num1 = double.Parse(Visor.Text, CultureInfo.InvariantCulture);
-                VisorAux.Text = $"{Convert.ToString(Num1)} X ";
-            }               
-
-            OperacaoStatus = "Multiplicacao";
-            Visor.Text = "";
-            ControleContinuidade = true;
+            Operacao("Multiplicacao", string.Empty, "X");
         }
 
         private void Button_Divisao_Click(object sender, EventArgs e)
         {
-            if (Visor.Text != "")
-            {
-                Num1 = double.Parse(Visor.Text, CultureInfo.InvariantCulture);
-                VisorAux.Text = $"{Convert.ToString(Num1)} ÷ ";
-            }               
-
-            OperacaoStatus = "Divisao";
-            Visor.Text = "";
-            ControleContinuidade = true;
+            Operacao("Divisao", string.Empty, "÷");
         }
 
         private void Button_Elevado_Click(object sender, EventArgs e)
         {
-            if (Visor.Text != "")
-            {
-                Num1 = double.Parse(Visor.Text, CultureInfo.InvariantCulture);
-                VisorAux.Text = $"sqrt({Convert.ToString(Num1)})";
-            }               
-
-            OperacaoStatus = "Elevado";
-            ControleContinuidade = true;
+            Operacao("Elevado", "sqrt", string.Empty);
             Button_Resultado_Click_1(null, null);
         }
 
         private void Button_Porcento_Click(object sender, EventArgs e)
         {
-            if (Visor.Text != "")
-                Num2 = double.Parse(Visor.Text, CultureInfo.InvariantCulture);
-
-            OperacaoStatus = "Porcento";
-            Visor.Text = "";
-            ControleContinuidade = true;
+            Operacao("Porcento", string.Empty, string.Empty);
+            Button_Resultado_Click_1(null, null);
         }
 
         private void Button_Raiz_Click(object sender, EventArgs e)
         {
-            if (Visor.Text != "")
-            {
-                Num1 = double.Parse(Visor.Text, CultureInfo.InvariantCulture);
-                VisorAux.Text = $"√({Convert.ToString(Num1)})";
-            }
-
-            OperacaoStatus = "Raiz";
-            ControleContinuidade = true;
+            Operacao("Raiz", "√", string.Empty);
             Button_Resultado_Click_1(null, null);
         }
 
-        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        protected void CalculadoraClear()
         {
-            switch (keyData)
-            {
-                case Keys.D0:
-                case Keys.NumPad0:
-                    Button_Zero_Click(null, null);
-                    return true;
-                case Keys.D1:
-                case Keys.NumPad1:
-                    Button_Um_Click(null, null);
-                    return true;
-                case Keys.D2:
-                case Keys.NumPad2:
-                    Button_Dois_Click(null, null);
-                    return true;
-                case Keys.D3:
-                case Keys.NumPad3:
-                    Button_Tres_Click(null, null);
-                    return true;
-                case Keys.D4:
-                case Keys.NumPad4:
-                    Button_Quatro_Click(null, null);
-                    return true;
-                case Keys.D5:
-                case Keys.NumPad5:
-                    Button_Cinco_Click(null, null);
-                    return true;
-                case Keys.D6:
-                case Keys.NumPad6:
-                    Button_Seis_Click(null, null);
-                    return true;
-                case Keys.D7:
-                case Keys.NumPad7:
-                    Button_Sete_Click(null, null);
-                    return true;
-                case Keys.D8:
-                case Keys.NumPad8:
-                    Button_Oito_Click(null, null);
-                    return true;
-                case Keys.D9:
-                case Keys.NumPad9:
-                    Button_Nove_Click(null, null);
-                    return true;
-
-                case Keys.Add:
-                    Button_Soma_Click(null, null);
-                    return true;
-                case Keys.Subtract:
-                    Button_Subtracao_Click(null, null);
-                    return true;
-                case Keys.Multiply:
-                    Button_Multiplicacao_Click(null, null);
-                    return true;
-                case Keys.Divide:
-                    Button_Divisao_Click(null, null);
-                    return true;
-                case Keys.Decimal:
-                    Button_Ponto_Click(null, null);
-                    return true;
-
-                case Keys.Enter:
-                    Button_Resultado_Click_1(null, null);
-                    return true;
-                case Keys.Escape:
-                    Cancel_Click(null, null);
-                    return true;
-                case Keys.Back:
-                    BackSpace_Button_Click(null, null);
-                    return true;
-
-                default:
-                    break;
-            }
-
-            return base.ProcessCmdKey(ref msg, keyData);
+            Visor.Text = "";
+            VisorAux.Text = "";
+            Num1 = 0;
+            Num2 = 0;
         }
 
+        protected void Operacao(string opStatus, string simboloDireita, string simboloEsquerda)
+        {
+            if (Visor.Text != "")
+            {
+                if (opStatus != "Porcento")
+                {
+                    double.TryParse(Visor.Text, out Num1);
+
+                    if (string.IsNullOrEmpty(simboloDireita))
+                    {
+                        VisorAux.Text = $"{Convert.ToString(Num1)} {simboloEsquerda} ";
+                    }
+                    else
+                    {
+                        VisorAux.Text = $"{simboloDireita}({Convert.ToString(Num1)})";
+                    }
+                }
+                else
+                {
+                    Num2 = double.Parse(Visor.Text, CultureInfo.InvariantCulture);
+                }
+            }
+
+            OperacaoStatus = opStatus;
+            Visor.Text = "";
+            ControleContinuidade = true;
+        }
     }
 }
