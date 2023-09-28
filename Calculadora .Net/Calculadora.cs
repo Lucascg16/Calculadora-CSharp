@@ -13,6 +13,7 @@ namespace Calculadora.Net
         {
             InitializeComponent();
             VisorAux.Text = string.Empty;
+            Visor.Enabled = false;
         }
 
         private void Button_Number_Click(object sender, EventArgs e)
@@ -82,7 +83,7 @@ namespace Calculadora.Net
                         }
                     }                   
 
-                    Visor.Text = Convert.ToString(resultado);
+                    Visor.Text = resultado.ToString();
                     ControleContinuidade = false;
                     break;
 
@@ -170,6 +171,10 @@ namespace Calculadora.Net
                     break;
 
                 case "Raiz":
+                    if(Num1 == 0)
+                    {
+                        return;
+                    }
                     Visor.Text = Calculos.Raiz_Quadrada(Num1).ToString();
                     ControleContinuidade = false;
                     break;
@@ -224,7 +229,7 @@ namespace Calculadora.Net
             Num2 = 0;
         }
 
-        protected void Operacao(string opStatus, string simboloDireita, string simboloEsquerda)
+        protected void Operacao(string opStatus, string simboloEsquerda, string simboloDireita)
         {
             if (Visor.Text != "")
             {
@@ -232,18 +237,18 @@ namespace Calculadora.Net
                 {
                     double.TryParse(Visor.Text, out Num1);
 
-                    if (string.IsNullOrEmpty(simboloDireita))
+                    if (string.IsNullOrEmpty(simboloEsquerda))
                     {
-                        VisorAux.Text = $"{Convert.ToString(Num1)} {simboloEsquerda} ";
+                        VisorAux.Text = $"{Num1} {simboloDireita} ";
                     }
                     else
                     {
-                        VisorAux.Text = $"{simboloDireita}({Convert.ToString(Num1)})";
+                        VisorAux.Text = $"{simboloEsquerda}({Num1})";
                     }
                 }
                 else
                 {
-                    Num2 = double.Parse(Visor.Text, CultureInfo.InvariantCulture);
+                    double.TryParse(Visor.Text, out Num2);
                 }
             }
 
