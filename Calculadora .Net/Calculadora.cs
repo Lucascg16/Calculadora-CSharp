@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Globalization;
 using System.Windows.Forms;
 
 namespace Calculadora.Net
@@ -7,8 +6,10 @@ namespace Calculadora.Net
     public partial class Calculadora : Form
     {
         double Num1 = 0, Num2 = 0, resultado = 0;//Os dois valores que a calculadora precisa pra fazer o calculo.
-        string OperacaoStatus = "", OperacaoControle = "";//OpStatus - indica a calculadora qual conta ela deve fazer. || OpControle - indica a calculadora se a porcentagem e somando ou subtraindo.
-        bool ControleContinuidade = true;//Indica se a conta vai continuar ou se ela vai resetar e comecar um novo ciclo, setado como false nao existe continuidade.
+        string OperacaoStatus = "", OperacaoPorcentagem = "";//OpStatus - indica a calculadora qual conta ela deve fazer. || OpPorcentagem - indica a calculadora se a porcentagem e somando ou subtraindo.
+        bool ControleContinuidade = true;//Indica se a conta vai continuar ou se ela vai resetar e comecar um novo ciclo.
+                                         //Ao clicar em igual ele e setado como false desativando a continuidade, se o usuario clicar em um numero a calculadora e limpa.
+                                         //Caso contrario se clicar em qualquer operando ele volta para true podendo assim fazer conta em cima de conta, quantas vezes quiser.
         public Calculadora()
         {
             InitializeComponent();
@@ -75,101 +76,23 @@ namespace Calculadora.Net
             switch (OperacaoStatus)
             {
                 case "Soma":
-                    if (Visor.Text != "")
-                    {
-                        if (ControleContinuidade == true)
-                        {
-                            double.TryParse(Visor.Text, out Num2);
-                            VisorAux.Text += $"{Num2} =";
-                            resultado = Calculos.Soma(Num1, Num2);
-                        }
-                        else
-                        {
-                            resultado += Num2;
-                            VisorAux.Text = $"{resultado - Num2} + {Num2} =";
-                        }
-                    }                   
-
-                    Visor.Text = resultado.ToString();
-                    ControleContinuidade = false;
+                    FazSoma();
                     break;
 
                 case "Subtracao":
-                    if (Visor.Text != "")
-                    {
-                        if (ControleContinuidade == true)
-                        {
-                            double.TryParse(Visor.Text, out Num2);
-                            VisorAux.Text += $"{Num2} =";
-                            resultado = Calculos.Subtracao(Num1, Num2);
-                        }
-                        else
-                        {
-                            resultado -= Num2;
-                            VisorAux.Text = $"{resultado + Num2} - {Num2} =";
-                        }
-                    }                   
-
-                    Visor.Text = resultado.ToString();
-                    ControleContinuidade = false;
+                    FazSubtracao();
                     break;
 
                 case "Multiplicacao":
-                    if (Visor.Text != "")
-                    {
-                        if (ControleContinuidade == true)
-                        {
-                            double.TryParse(Visor.Text, out Num2);
-                            VisorAux.Text += $"{Num2} =";
-                            resultado = Calculos.Multiplicacao(Num1, Num2);
-                        }
-                        else
-                        {
-                            resultado *= Num2;
-                            VisorAux.Text = $"{resultado / Num2} x {Num2} =";
-                        }
-                    }
-
-                    Visor.Text = resultado.ToString();
-                    ControleContinuidade = false;
+                    FazMultiplicacao();
                     break;
 
                 case "Divisao":
-                    if (Visor.Text != "")
-                    {
-                        if (ControleContinuidade == true)
-                        {
-                            double.TryParse(Visor.Text, out Num2);
-                            VisorAux.Text += $"{Num2} =";
-                            resultado = Calculos.Divisao(Num1, Num2);
-                        }
-                        else
-                        {
-                            resultado /= Num2;
-                            VisorAux.Text = $"{resultado * Num2} ÷ {Num2} =";
-                        }
-                    }
-
-                    Visor.Text = resultado.ToString();
-                    ControleContinuidade = false;
+                    FazDivisao();
                     break;
 
                 case "Porcento":
-                    double porcento = Calculos.Porcentagem(Num1, Num2);
-
-                    if (OperacaoControle == "+")
-                    {
-                        resultado = Num1 + porcento;
-                        Visor.Text = resultado.ToString();
-                        VisorAux.Text += $"{porcento} =";
-                    }
-                    else if (OperacaoControle == "-")
-                    {
-                        resultado = Num1 - porcento;
-                        Visor.Text = resultado.ToString();
-                        VisorAux.Text += $"{porcento} =";
-                    }
-                    ControleContinuidade = false;
+                    FazPorcento();
                     break;
 
                 case "Elevado":
@@ -178,27 +101,126 @@ namespace Calculadora.Net
                     break;
 
                 case "Raiz":
-                    if(Num1 == 0)
-                    {
-                        return;
-                    }
-
                     Visor.Text = Calculos.Raiz_Quadrada(Num1).ToString();
                     ControleContinuidade = false;
                     break;
             }
         }
 
+        protected void FazSoma()
+        {
+            if (Visor.Text != "")
+            {
+                if (ControleContinuidade == true)
+                {
+                    double.TryParse(Visor.Text, out Num2);
+                    VisorAux.Text += $"{Num2} =";
+                    resultado = Calculos.Soma(Num1, Num2);
+                }
+                else
+                {
+                    resultado += Num2;
+                    VisorAux.Text = $"{resultado - Num2} + {Num2} =";
+                }
+            }
+
+            Visor.Text = resultado.ToString();
+            ControleContinuidade = false;
+        }
+
+        protected void FazSubtracao()
+        {
+            if (Visor.Text != "")
+            {
+                if (ControleContinuidade == true)
+                {
+                    double.TryParse(Visor.Text, out Num2);
+                    VisorAux.Text += $"{Num2} =";
+                    resultado = Calculos.Subtracao(Num1, Num2);
+                }
+                else
+                {
+                    resultado -= Num2;
+                    VisorAux.Text = $"{resultado + Num2} - {Num2} =";
+                }
+            }
+
+            Visor.Text = resultado.ToString();
+            ControleContinuidade = false;
+        }
+
+        protected void FazMultiplicacao()
+        {
+            if (Visor.Text != "")
+            {
+                if (ControleContinuidade == true)
+                {
+                    double.TryParse(Visor.Text, out Num2);
+                    VisorAux.Text += $"{Num2} =";
+                    resultado = Calculos.Multiplicacao(Num1, Num2);
+                }
+                else
+                {
+                    resultado *= Num2;
+                    VisorAux.Text = $"{resultado / Num2} x {Num2} =";
+                }
+            }
+
+            Visor.Text = resultado.ToString();
+            ControleContinuidade = false;
+        }
+
+        protected void FazDivisao()
+        {
+            if (Visor.Text != "")
+            {
+                if (ControleContinuidade == true)
+                {
+                    double.TryParse(Visor.Text, out Num2);
+                    VisorAux.Text += $"{Num2} =";
+                    resultado = Calculos.Divisao(Num1, Num2);
+                }
+                else
+                {
+                    resultado /= Num2;
+                    VisorAux.Text = $"{resultado * Num2} ÷ {Num2} =";
+                }
+            }
+
+            Visor.Text = resultado.ToString();
+            ControleContinuidade = false;
+        }
+
+        protected void FazPorcento()
+        {
+            double porcento = Calculos.Porcentagem(Num1, Num2);
+
+            if (OperacaoPorcentagem == "+")
+            {
+                resultado = Num1 + porcento;
+                Visor.Text = resultado.ToString();
+                VisorAux.Text += $"{porcento} =";
+            }
+            else if (OperacaoPorcentagem == "-")
+            {
+                resultado = Num1 - porcento;
+                Visor.Text = resultado.ToString();
+                VisorAux.Text += $"{porcento} =";
+            }
+
+            ControleContinuidade = false;
+        }
+
         private void Button_Soma_Click(object sender, EventArgs e)
         {
             Operacao("Soma", "+", false);
-            OperacaoControle = "+";
+            OperacaoPorcentagem = "+";
         }
 
         private void Button_Subtracao_Click(object sender, EventArgs e)
         {
             Operacao("Subtracao", "-", false);
-            OperacaoControle = "-";
+            OperacaoPorcentagem = "-";
         }
 
         private void Button_Multiplicacao_Click(object sender, EventArgs e)
