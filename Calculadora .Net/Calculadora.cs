@@ -62,6 +62,14 @@ namespace Calculadora.Net
             Visor.Text = visor;
         }
 
+        protected void CalculadoraClear()
+        {
+            Visor.Text = "";
+            VisorAux.Text = "";
+            Num1 = 0;
+            Num2 = 0;
+        }
+
         private void Button_Resultado_Click_1(object sender, EventArgs e)
         {
             switch (OperacaoStatus)
@@ -183,53 +191,45 @@ namespace Calculadora.Net
 
         private void Button_Soma_Click(object sender, EventArgs e)
         {
-            Operacao("Soma", string.Empty, "+");
+            Operacao("Soma", "+", false);
             OperacaoControle = "+";
         }
 
         private void Button_Subtracao_Click(object sender, EventArgs e)
         {
-            Operacao("Subtracao", string.Empty, "-");
+            Operacao("Subtracao", "-", false);
             OperacaoControle = "-";
         }
 
         private void Button_Multiplicacao_Click(object sender, EventArgs e)
         {
-            Operacao("Multiplicacao", string.Empty, "X");
+            Operacao("Multiplicacao", "X", false);
         }
 
         private void Button_Divisao_Click(object sender, EventArgs e)
         {
-            Operacao("Divisao", string.Empty, "÷");
+            Operacao("Divisao", "÷", false);
         }
 
         private void Button_Elevado_Click(object sender, EventArgs e)
         {
-            Operacao("Elevado", "sqrt", string.Empty);
+            Operacao("Elevado", "sqrt", true);
             Button_Resultado_Click_1(null, null);
         }
 
         private void Button_Porcento_Click(object sender, EventArgs e)
         {
-            Operacao("Porcento", string.Empty, string.Empty);
+            Operacao("Porcento", string.Empty, true);
             Button_Resultado_Click_1(null, null);
         }
 
         private void Button_Raiz_Click(object sender, EventArgs e)
         {
-            Operacao("Raiz", "√", string.Empty);
+            Operacao("Raiz", "√", true);
             Button_Resultado_Click_1(null, null);
         }
 
-        protected void CalculadoraClear()
-        {
-            Visor.Text = "";
-            VisorAux.Text = "";
-            Num1 = 0;
-            Num2 = 0;
-        }
-
-        protected void Operacao(string opStatus, string simboloEsquerda, string simboloDireita)
+        protected void Operacao(string opStatus, string simbolo, bool ladoEsquerdo)
         {
             if (Visor.Text != "")
             {
@@ -237,13 +237,13 @@ namespace Calculadora.Net
                 {
                     double.TryParse(Visor.Text, out Num1);
 
-                    if (string.IsNullOrEmpty(simboloEsquerda))
+                    if (ladoEsquerdo == false)
                     {
-                        VisorAux.Text = $"{Num1} {simboloDireita} ";
+                        VisorAux.Text = $"{Num1} {simbolo} ";
                     }
                     else
                     {
-                        VisorAux.Text = $"{simboloEsquerda}({Num1})";
+                        VisorAux.Text = $"{simbolo}({Num1})";
                     }
                 }
                 else
