@@ -13,7 +13,6 @@ namespace Calculadora.Net
         {
             InitializeComponent();
             VisorAux.Text = string.Empty;
-            Visor.Enabled = false;
         }
 
         private void Button_Number_Click(object sender, EventArgs e)
@@ -175,6 +174,7 @@ namespace Calculadora.Net
                     {
                         return;
                     }
+
                     Visor.Text = Calculos.Raiz_Quadrada(Num1).ToString();
                     ControleContinuidade = false;
                     break;
