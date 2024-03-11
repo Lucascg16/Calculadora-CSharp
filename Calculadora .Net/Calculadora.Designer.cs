@@ -54,6 +54,8 @@
             this.VisorAux = new System.Windows.Forms.Label();
             this.Clear = new System.Windows.Forms.Button();
             this.BackSpace_Button = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // Cancel
@@ -297,7 +299,8 @@
             // VisorAux
             // 
             this.VisorAux.AutoSize = true;
-            this.VisorAux.Location = new System.Drawing.Point(9, 2);
+            this.VisorAux.Dock = System.Windows.Forms.DockStyle.Right;
+            this.VisorAux.Location = new System.Drawing.Point(199, 0);
             this.VisorAux.Name = "VisorAux";
             this.VisorAux.Size = new System.Drawing.Size(19, 13);
             this.VisorAux.TabIndex = 22;
@@ -324,14 +327,22 @@
             this.BackSpace_Button.UseVisualStyleBackColor = true;
             this.BackSpace_Button.Click += new System.EventHandler(this.BackSpace_Button_Click);
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.VisorAux);
+            this.panel1.Location = new System.Drawing.Point(12, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(218, 12);
+            this.panel1.TabIndex = 25;
+            // 
             // Calculadora
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(242, 326);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.BackSpace_Button);
             this.Controls.Add(this.Clear);
-            this.Controls.Add(this.VisorAux);
             this.Controls.Add(this.Cancel);
             this.Controls.Add(this.Visor);
             this.Controls.Add(this.Button_Resultado);
@@ -358,6 +369,8 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Calculadora";
             this.Text = "Calculadora";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -390,6 +403,7 @@
         private System.Windows.Forms.Label VisorAux;
         private System.Windows.Forms.Button Clear;
         private System.Windows.Forms.Button BackSpace_Button;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 

@@ -111,7 +111,7 @@ namespace Calculadora.Net
         {
             if (Visor.Text != "")
             {
-                if (ControleContinuidade == true)
+                if (ControleContinuidade)
                 {
                     double.TryParse(Visor.Text, out Num2);
                     VisorAux.Text += $"{Num2} =";
@@ -132,7 +132,7 @@ namespace Calculadora.Net
         {
             if (Visor.Text != "")
             {
-                if (ControleContinuidade == true)
+                if (ControleContinuidade)
                 {
                     double.TryParse(Visor.Text, out Num2);
                     VisorAux.Text += $"{Num2} =";
@@ -153,7 +153,7 @@ namespace Calculadora.Net
         {
             if (Visor.Text != "")
             {
-                if (ControleContinuidade == true)
+                if (ControleContinuidade)
                 {
                     double.TryParse(Visor.Text, out Num2);
                     VisorAux.Text += $"{Num2} =";
@@ -174,7 +174,7 @@ namespace Calculadora.Net
         {
             if (Visor.Text != "")
             {
-                if (ControleContinuidade == true)
+                if (ControleContinuidade)
                 {
                     double.TryParse(Visor.Text, out Num2);
                     VisorAux.Text += $"{Num2} =";
@@ -200,12 +200,19 @@ namespace Calculadora.Net
                 resultado = Num1 + porcento;
                 Visor.Text = resultado.ToString();
                 VisorAux.Text += $"{porcento} =";
+
+                Num2 = porcento;
+                OperacaoStatus = "Soma";
             }
             else if (OperacaoPorcentagem == "-")
             {
                 resultado = Num1 - porcento;
                 Visor.Text = resultado.ToString();
                 VisorAux.Text += $"{porcento} =";
+
+                Num2 = porcento;
+                OperacaoStatus = "Subtracao";
+
             }
 
             ControleContinuidade = false;
@@ -251,7 +258,7 @@ namespace Calculadora.Net
             Button_Resultado_Click_1(null, null);
         }
 
-        protected void Operacao(string opStatus, string simbolo, bool ladoEsquerdo)
+        protected void Operacao(string opStatus, string simbolo, bool simboloLadoEsquerdo)
         {
             if (Visor.Text != "")
             {
@@ -259,7 +266,7 @@ namespace Calculadora.Net
                 {
                     double.TryParse(Visor.Text, out Num1);
 
-                    if (ladoEsquerdo == false)
+                    if (simboloLadoEsquerdo == false)
                     {
                         VisorAux.Text = $"{Num1} {simbolo} ";
                     }
